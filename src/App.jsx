@@ -1,14 +1,18 @@
 import { useState } from 'react'
-
+import LandingContainer from './components/landing_page/LandingContainer'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
-    <>
-
-    </>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<LandingContainer />}>
+      </Route>
+    </Routes>
+  </BrowserRouter>
   )
 }
 

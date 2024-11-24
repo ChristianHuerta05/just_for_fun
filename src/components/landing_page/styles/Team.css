@@ -1,0 +1,111 @@
+.team-main-container {
+    position: relative; 
+    width: 100%; 
+    overflow: hidden; 
+    display: flex; 
+    justify-content: center; 
+    align-items: flex-start; 
+    background: radial-gradient(50% 50% at 50% 50%, rgba(96, 84, 153, 0.5) 0%, #201C33 70.69%);
+    height: auto; 
+    padding: 0 0px 0px 50px; 
+}
+
+
+.team-title{
+    font-size: 100px; 
+    color: white; 
+ 
+}
+.background-teams {
+    display: block; 
+    width: 100%; 
+    height: auto; 
+}
+
+.teams-section {
+    position: absolute; 
+    top: 5%; 
+    width: 100%; 
+    text-align: center; 
+    z-index: 1;
+}
+
+.team-main-container h1 {
+    font-size: 50px; 
+    color: white; 
+    margin: 0; 
+}
+
+.container-for-stuff-i-ran-out-of-names {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    width: 100%; 
+    align-items: center;
+    height: 100%;
+}
+
+.is-arrow {
+    width: 75px;
+    cursor: pointer; 
+    color: white;
+}
+
+.middle-section-teams {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fade-in {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.3s ease-in, transform 0.3s ease-in;
+}
+
+.fade-out {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.team-image {
+    width: 70vw; 
+    height: 1000px; 
+    object-fit: contain; 
+}
+
+.team-image:hover {
+    transform: scale(1.05); 
+}
+
+@media (max-width: 768px) {
+    .team-title {
+        font-size: 30px;
+    }
+
+    .team-main-container h1 {
+        font-size: 30px;
+    }
+
+    .team-image {
+        width: 70vw;
+        height: auto;
+    }
+
+    .middle-section-teams {
+        flex-direction: row;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .teams-section{
+        left: 50%;
+        transform: translateX(-56%);
+    }
+
+    .is-arrow {
+        width: 40px;
+    }
+}

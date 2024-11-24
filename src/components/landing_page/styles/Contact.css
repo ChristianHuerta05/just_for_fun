@@ -1,0 +1,55 @@
+.contact-main-container{
+    background: #201C33;
+    position: relative;
+}
+
+.cool-background-stuff {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%); 
+    width: 100%;
+    z-index: 0;
+}
+
+.contact-main-container p{
+   position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translateX(-50%); 
+    font-size: 60px;
+}
+
+.social-media{
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    transform: translateX(-50%); 
+
+}
+
+
+@media (max-width: 768px) {
+    .contact-main-container p {
+        font-size:20px;
+        left: 50%;
+        transform: translateX(-52%); 
+        top: 80%;
+
+    }
+
+    .social-media {
+        flex-direction: column;
+        
+        gap: 10px;
+    }
+
+    .social-media-icon {
+        width: 30px;
+        height: auto;
+    }
+
+    .contact-main-container{
+        margin-top: 00px;
+    }
+}

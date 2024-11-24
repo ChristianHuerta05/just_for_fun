@@ -1,0 +1,78 @@
+.navigation-items {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 20px;
+    gap: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.navigation-items li {
+    position: relative;
+}
+
+.navigation-items li:not(:last-child)::after {
+    content: '|';
+    margin-left: 10px; 
+    color: white;
+    font-size: 20px; 
+    line-height: 1;
+}
+.navigation-items li a {
+    text-decoration: none;
+    color: white;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navigation-items li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.navigation-items li a:hover::after,
+.navigation-items li a:focus::after {
+    width: 100%;
+}
+
+.navigation-items li a:hover,
+.navigation-items li a:focus {
+    color: lightblue;
+}
+
+#about {
+    scroll-margin-top: -400px; 
+}
+
+#sponsors {
+    scroll-margin-top: -900px; 
+}
+
+#team {
+    scroll-margin-top: -400px; 
+}
+
+#contact {
+    scroll-margin-top: -700px; 
+}
+
+@media (max-width: 768px) {
+    .navigation-items {
+        font-size: 12px;
+        gap: 5px;
+        justify-content: center;
+    }
+
+    .navigation-items li:not(:last-child)::after {
+        font-size: 16px;
+    }
+}

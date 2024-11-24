@@ -1,0 +1,18 @@
+.sponsors-container {
+    position: relative; 
+    background: linear-gradient(180deg, #3F3865 0%, rgba(63, 56, 101, 0) 15%, rgba(32, 28, 51, 0) 85%, #201C33 100%), 
+                url('../assets/stars-background.png') no-repeat center;
+    background-size: cover; 
+    overflow: hidden;
+}
+
+.spaceship{
+    width: 100%;
+}
+
+
+@media (max-width: 768px) {
+    .sponsors-container {
+        padding: 0px;
+    }
+}
