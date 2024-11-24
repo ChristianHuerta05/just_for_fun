@@ -14,7 +14,7 @@
 
 .contact-main-container p{
    position: absolute;
-    top: 75%;
+    bottom: 20%;
     left: 50%;
     transform: translateX(-50%); 
     font-size: 60px;
@@ -22,7 +22,7 @@
 
 .social-media{
     position: absolute;
-    bottom: 2%;
+    bottom: 10%;
     left: 50%;
     transform: translateX(-50%); 
 
@@ -34,13 +34,13 @@
         font-size:20px;
         left: 50%;
         transform: translateX(-52%); 
-        top: 80%;
+        bottom: 12%;
 
     }
 
     .social-media {
         flex-direction: column;
-        
+        bottom: 0%;
         gap: 10px;
     }
 

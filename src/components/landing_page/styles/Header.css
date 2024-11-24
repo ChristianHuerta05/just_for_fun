@@ -67,12 +67,28 @@
 
 @media (max-width: 768px) {
     .navigation-items {
-        font-size: 12px;
+        font-size: 11px;
         gap: 5px;
         justify-content: center;
     }
 
     .navigation-items li:not(:last-child)::after {
         font-size: 16px;
+    }
+
+    #about {
+        scroll-margin-top: 0px; 
+    }
+    
+    #sponsors {
+        scroll-margin-top: 0px; 
+    }
+    
+    #team {
+        scroll-margin-top: 0px; 
+    }
+    
+    #contact {
+        scroll-margin-top: 0px; 
     }
 }
