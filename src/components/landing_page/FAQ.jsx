@@ -52,13 +52,13 @@ const FAQ = () => {
                 <div className="boxy">less beans</div>
                 <p>no more beans</p>
                 <div className="boxy">sushi</div>
-                <p>sushi better</p>
+                <p>sushi</p>
                 <div className="boxy">wing stop</div>
-                <p>wing stops fire</p>
-                <div className="boxy">49ers lost</div>
-                <p>49ers lost sad</p>
+                <p>wing stop</p>
+                <div className="boxy">studd</div>
+                <p>stuff</p>
                 <div className="boxy">panda</div>
-                <p>panda good</p>
+                <p>panda</p>
                 <div className="boxy">back to beans</div>
                 <p>back to beans</p>
                 <div className="some-interesting-text">
