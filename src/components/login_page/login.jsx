@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom'; 
 import loginBackground from './assets/login.svg';
 import arrow from './assets/right.svg';
 import github from './assets/github.svg';
