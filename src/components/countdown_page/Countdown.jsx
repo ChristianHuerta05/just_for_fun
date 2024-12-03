@@ -7,9 +7,8 @@ const Countdown = () => {
     const videoRef = useRef(null);
     const targetDate = new Date('February 24, 2025 00:00:00').getTime();
     const [timeRemaining, setTimeRemaining] = useState(targetDate - new Date().getTime());
-    const [isSkipping, setIsSkipping] = useState(false);
     const [showCountdown, setShowCountdown] = useState(true);
-    const [isVideoReady, setIsVideoReady] = useState(false);
+    const [isVideoReady, setIsVideoReady] = useState(true); 
     const [shouldPlayVideo, setShouldPlayVideo] = useState(false);
 
     useEffect(() => {
@@ -23,33 +22,27 @@ const Countdown = () => {
                 clearInterval(interval);
                 setShowCountdown(false);
                 setShouldPlayVideo(true);
+
             }
 
             setTimeRemaining(distance);
         };
 
-        if (isSkipping) {
-            interval = setInterval(() => {
-                setTimeRemaining((prev) => {
-                    if (prev <= 0) {
-                        clearInterval(interval);
-                        setShowCountdown(false);
-                        setShouldPlayVideo(true);
-                        return 0;
-                    }
-                    return prev - 50000000;
-                });
-            }, 10);
-        } else {
-            interval = setInterval(updateTime, 10);
-        }
 
-        return () => clearInterval(interval);
-    }, [isSkipping, targetDate]);
+        interval = setInterval(updateTime, 100);
+
+        return () => {
+            clearInterval(interval);
+
+        };
+    }, [targetDate]);
 
     useEffect(() => {
         if (shouldPlayVideo && videoRef.current) {
-            videoRef.current.play();
+
+            videoRef.current.play().catch((error) => {
+                console.error('Error playing video:', error);
+            });
         }
     }, [shouldPlayVideo]);
 
@@ -69,31 +62,38 @@ const Countdown = () => {
 
     return (
         <div className="countdown-container">
-            {!isVideoReady && (
-                <div className="loading-screen">
-                    <h1>Loading...</h1>
-                </div>
-            )}
             <video
                 ref={videoRef}
                 className="background-video"
-                src="/vid8mp.mp4"
+                src="/small.mp4"
                 type="video/mp4"
                 muted
                 loop={false}
                 playsInline
-                preload="auto"
-                onCanPlayThrough={() => {
-                    setIsVideoReady(true);
+                preload="auto" 
+                onCanPlay={() => {
+                    setIsVideoReady(true); 
+
                 }}
                 onEnded={() => {
+
                     navigate('/landing');
+                }}
+                onError={(error) => {
+                    console.error('Video failed to load:', error);
                 }}
             />
             {isVideoReady && showCountdown && (
                 <div className="countdown-overlay">
                     <h1 className="countdown-timer">{formatTime(timeRemaining)}</h1>
-                    <button className="skip-button" onClick={() => setIsSkipping(true)}>
+                    <button
+                        className="skip-button"
+                        onClick={() => {
+
+                            setShowCountdown(false);
+                            setShouldPlayVideo(true);
+                        }}
+                    >
                         Skip Countdown
                     </button>
                 </div>
